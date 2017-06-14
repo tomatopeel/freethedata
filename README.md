@@ -1,0 +1,1 @@
+At its conception, this repository hosts a copy of the live HTTP headers Chrome extension code from their [samples page here](https://developer.chrome.com/extensions/samples), with the intention of transmuting this into a functioning HTTP traffic logger to a remote database.
