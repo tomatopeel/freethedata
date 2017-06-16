@@ -1,20 +1,12 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+chrome.webRequest.onBeforeRequest.addListener(
+    callback, {urls: ["<all_urls>"]})
+chrome.webRequest.onHeadersReceived.addListener(
+    callback, {urls: ["<all_urls>"]})
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.debugger.attach({tabId:tab.id}, version,
-      onAttach.bind(null, tab.id));
-});
-
-var version = "1.0";
-
-function onAttach(tabId) {
-  if (chrome.runtime.lastError) {
-    alert(chrome.runtime.lastError.message);
-    return;
-  }
-
-  chrome.windows.create(
-      {url: "headers.html?" + tabId, type: "popup", width: 800, height: 600});
+// info depends on event type and opt_extraInfoSpec
+function callback(info) {
+    var str = JSON.stringify(info, null, 2)
+    console.log(str)
 }
+
+
