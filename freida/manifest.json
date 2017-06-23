@@ -1,0 +1,14 @@
+{
+    "name": "Freida",
+    "description": "Sends all pertinent browsing data down a websocket.",
+    "version": "0.1",
+    "permissions": [
+        "webRequest",
+        "*://*/*",
+        "cookies"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "manifest_version": 2
+}
